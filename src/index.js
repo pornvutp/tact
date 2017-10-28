@@ -1,22 +1,36 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import NavBar from './components/navbar';
+import { BrowserRouter, Route } from 'react-router-dom';
+
+import App from './components/app';
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
-class App extends Component {
-  render() {
-    return (
+class Home extends React.Component{
+  render(){
+    return
       <div>
-        <NavBar />
+        <App />
       </div>
-    );
+  }
+}
+
+class Goodbye extends React.Component{
+  render(){
+    return <div>Goodbye!</div>
   }
 }
 
 ReactDOM.render(
-  <App />
+  <Provider store={createStoreWithMiddleware(reducers)}>
+    <BrowserRouter>
+      <div>
+        <Route path="*" component={Home} />
+        <Route path="/about-us" component={Goodbye} />
+      </div>
+    </BrowserRouter>
+  </Provider>
   , document.querySelector('.container'));
