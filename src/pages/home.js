@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import NavBar from '../containers/navbar';
-import Jumbotron from '../containers/jumbotron';
+import JumbotronHome from '../containers/jumbotron-home';
 
-export default class App extends Component {
+export default class Home extends Component {
   render(){
     return(
       <div>
         <NavBar />
-        <Jumbotron />
+        <JumbotronHome />
       </div>
     );
   }

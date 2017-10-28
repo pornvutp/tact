@@ -4,32 +4,17 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-import App from './components/app';
+import Home from './pages/home';
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
-class Home extends React.Component{
-  render(){
-    return
-      <div>
-        <App />
-      </div>
-  }
-}
-
-class Goodbye extends React.Component{
-  render(){
-    return <div>Goodbye!</div>
-  }
-}
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <BrowserRouter>
       <div>
-        <Route path="*" component={Home} />
-        <Route path="/about-us" component={Goodbye} />
+        <Route path="/" component={Home} />
       </div>
     </BrowserRouter>
   </Provider>

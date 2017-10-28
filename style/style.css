@@ -1,6 +1,28 @@
 .bg-t-orange{
   background-color: #f15a24;
 }
-.bg-t-orange{
-  background-color: #000000;
+.bg-t-white{
+  background-color: #FFF;
+}
+.bg-img01{
+  background-image: url("/src/images/home/img01-01.png");
+}
+.navbar-toggler-icon{
+  height: 10px;
+}
+.nav-link-tact:active{
+  color: #000000;
+}
+.nav-link-tact:visited{
+  color: #000000;
+}
+.nav-link-tact:link{
+  color: #000000;
+}
+.nav-link-tact:hover{
+  color: #f15a24;
+  text-decoration: none;
+}
+.text-t-orange {
+  color: #f15a24;
 }
